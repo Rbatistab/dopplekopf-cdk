@@ -1,6 +1,6 @@
 # Game overview
 
-![game_overview](https://drive.google.com/uc?export=view&id=10djvgmbEifvyU-RYfDERHeuBATuP8i0l)
+![game_overview](https://drive.google.com/uc?export=view&id=1mwXmJg7Wf5M09esn7J_9TTux8-zYyMJh)
 
 # Architecture overview
 
