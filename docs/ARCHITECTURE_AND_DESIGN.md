@@ -1,3 +1,7 @@
+# Game overview
+
+![game_overview](https://drive.google.com/uc?export=view&id=10djvgmbEifvyU-RYfDERHeuBATuP8i0l)
+
 # Architecture overview
 
 Doppelkopf is a game in which 4 players. In a normal workflow:

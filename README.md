@@ -18,4 +18,8 @@ See `docs/TODO.md` for progress.
 
 # Game Overview
 
+![game_overview](https://drive.google.com/uc?export=view&id=10djvgmbEifvyU-RYfDERHeuBATuP8i0l)
+
+## Card deal and contract
+
 ![first_step_card_deal_and_contract](https://drive.google.com/uc?export=view&id=1zV2rW_a4iCs9uYO9FmfmYFaqUFYcwfPq)
