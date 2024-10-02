@@ -246,8 +246,8 @@
         <mxCell id="THssHd5Uye00vm0ejtuV-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="THssHd5Uye00vm0ejtuV-20" target="THssHd5Uye00vm0ejtuV-24">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="1280" y="100" />
-              <mxPoint x="1280" y="350" />
+              <mxPoint x="1251" y="160" />
+              <mxPoint x="1251" y="449" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -257,7 +257,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-20" value="&lt;b&gt;&quot;Serverless GraphQL server&quot;&lt;br&gt;&lt;/b&gt;(BE)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
-          <mxGeometry x="840" y="-10" width="390" height="220" as="geometry" />
+          <mxGeometry x="810.7" y="50" width="390" height="220" as="geometry" />
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="THssHd5Uye00vm0ejtuV-1" target="THssHd5Uye00vm0ejtuV-3">
           <mxGeometry relative="1" as="geometry" />
@@ -271,20 +271,6 @@
         <mxCell id="THssHd5Uye00vm0ejtuV-11" value="POST/deal/game_id" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="THssHd5Uye00vm0ejtuV-10">
           <mxGeometry x="0.0746" y="-5" relative="1" as="geometry">
             <mxPoint x="-25" y="-15" as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="THssHd5Uye00vm0ejtuV-43" value="`" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="THssHd5Uye00vm0ejtuV-3">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="990" y="370" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="314" y="370" />
-              <mxPoint x="990" y="370" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="THssHd5Uye00vm0ejtuV-44" value="GET/get_game_state/game_id&lt;br&gt;(Long poll or SSE)" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="THssHd5Uye00vm0ejtuV-43">
-          <mxGeometry x="-0.0509" y="1" relative="1" as="geometry">
-            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-3" value="&lt;b&gt;GraphQL Apollo clients&lt;/b&gt;&lt;br&gt;(FE)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=bottom;labelPosition=center;verticalLabelPosition=top;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
@@ -304,22 +290,7 @@
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-27" value="Post&lt;br&gt;requests" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="THssHd5Uye00vm0ejtuV-26">
           <mxGeometry x="-0.0306" y="-1" relative="1" as="geometry">
-            <mxPoint as="offset" />
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="THssHd5Uye00vm0ejtuV-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" target="THssHd5Uye00vm0ejtuV-24">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="714.5" y="160.5" as="sourcePoint" />
-            <mxPoint x="865.5066391265859" y="330" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="778" y="161" />
-              <mxPoint x="778" y="350" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="THssHd5Uye00vm0ejtuV-29" value="Get&lt;br&gt;requests" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="THssHd5Uye00vm0ejtuV-28">
-          <mxGeometry x="-0.0203" y="-3" relative="1" as="geometry">
-            <mxPoint x="5" y="-68" as="offset" />
+            <mxPoint x="-2" y="-1" as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-9" value="&lt;b&gt;API Gateway&lt;/b&gt;&lt;br&gt;graphql/" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.api_gateway;fillColor=#D9A741;gradientColor=none;" vertex="1" parent="1">
@@ -357,34 +328,37 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-18" value="&lt;b&gt;GetNewGame&lt;/b&gt;" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
-          <mxGeometry x="911" y="30" width="44" height="44" as="geometry" />
+          <mxGeometry x="881.7" y="90" width="44" height="44" as="geometry" />
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-19" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/brands-pack/240/graphql-128.png;imageBackground=#EA6B66;" vertex="1" parent="1">
-          <mxGeometry x="875" y="8.5" width="30" height="30" as="geometry" />
+          <mxGeometry x="845.7" y="68.5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="THssHd5Uye00vm0ejtuV-48" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="THssHd5Uye00vm0ejtuV-24" target="THssHd5Uye00vm0ejtuV-47">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-24" value="&lt;b&gt;Database&lt;/b&gt;" style="sketch=0;outlineConnect=0;fontColor=#232F3E;gradientColor=none;fillColor=#7AA116;strokeColor=none;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;pointerEvents=1;shape=mxgraph.aws4.bucket;" vertex="1" parent="1">
-          <mxGeometry x="997.5" y="300" width="75" height="78" as="geometry" />
+          <mxGeometry x="983.2" y="410" width="75" height="78" as="geometry" />
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-25" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/brands-pack/240/graphql-128.png;imageBackground=#EA6B66;" vertex="1" parent="1">
-          <mxGeometry x="947.5" y="290" width="30" height="30" as="geometry" />
+          <mxGeometry x="933.2" y="400" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-30" value="&lt;b&gt;JoinNewGame&lt;/b&gt;" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
-          <mxGeometry x="903.5" y="120" width="44" height="44" as="geometry" />
+          <mxGeometry x="874.2" y="180" width="44" height="44" as="geometry" />
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-31" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/brands-pack/240/graphql-128.png;imageBackground=#EA6B66;" vertex="1" parent="1">
-          <mxGeometry x="867.5" y="98.5" width="30" height="30" as="geometry" />
+          <mxGeometry x="838.2" y="158.5" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-34" value="&lt;b&gt;Deal&lt;/b&gt;" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
-          <mxGeometry x="1043.5" y="30" width="44" height="44" as="geometry" />
+          <mxGeometry x="1014.2" y="90" width="44" height="44" as="geometry" />
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-35" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/brands-pack/240/graphql-128.png;imageBackground=#EA6B66;" vertex="1" parent="1">
-          <mxGeometry x="1007.5" y="8.5" width="30" height="30" as="geometry" />
+          <mxGeometry x="978.2" y="68.5" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-36" value="&lt;b&gt;MakeAnnouncement&lt;/b&gt;" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
-          <mxGeometry x="1043.5" y="123" width="44" height="44" as="geometry" />
+          <mxGeometry x="1014.2" y="183" width="44" height="44" as="geometry" />
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-37" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/brands-pack/240/graphql-128.png;imageBackground=#EA6B66;" vertex="1" parent="1">
-          <mxGeometry x="1007.5" y="101.5" width="30" height="30" as="geometry" />
+          <mxGeometry x="978.2" y="161.5" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-40" value="" style="endArrow=classic;html=1;rounded=0;exitX=1.003;exitY=0.937;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="THssHd5Uye00vm0ejtuV-9">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
@@ -401,10 +375,13 @@
           <mxGeometry x="630" y="90" width="30" height="30" as="geometry" />
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-45" value="&lt;b&gt;PlayTrick&lt;/b&gt;" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#ED7100;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.lambda;" vertex="1" parent="1">
-          <mxGeometry x="1166" y="30" width="44" height="44" as="geometry" />
+          <mxGeometry x="1136.7" y="90" width="44" height="44" as="geometry" />
         </mxCell>
         <mxCell id="THssHd5Uye00vm0ejtuV-46" value="" style="shape=image;html=1;verticalAlign=top;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;imageAspect=0;aspect=fixed;image=https://cdn3.iconfinder.com/data/icons/brands-pack/240/graphql-128.png;imageBackground=#EA6B66;" vertex="1" parent="1">
-          <mxGeometry x="1130" y="8.5" width="30" height="30" as="geometry" />
+          <mxGeometry x="1100.7" y="68.5" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="THssHd5Uye00vm0ejtuV-47" value="&lt;b&gt;SNS&lt;/b&gt;" style="sketch=0;points=[[0,0,0],[0.25,0,0],[0.5,0,0],[0.75,0,0],[1,0,0],[0,1,0],[0.25,1,0],[0.5,1,0],[0.75,1,0],[1,1,0],[0,0.25,0],[0,0.5,0],[0,0.75,0],[1,0.25,0],[1,0.5,0],[1,0.75,0]];outlineConnect=0;fontColor=#232F3E;fillColor=#E7157B;strokeColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.sns;" vertex="1" parent="1">
+          <mxGeometry x="810.7" y="410" width="78" height="78" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
