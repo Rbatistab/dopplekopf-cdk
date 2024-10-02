@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:129.0) Gecko/20100101 Firefox/129.0" version="24.7.8">
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64; rv:129.0) Gecko/20100101 Firefox/129.0" version="24.7.16" pages="2">
   <diagram name="HighLevelGame" id="a7T__1L-RDwCLaP-Q2GO">
     <mxGraphModel dx="1012" dy="1676" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -234,6 +234,52 @@
         </mxCell>
         <mxCell id="DmAf1pjFy2f6rZrp5eoG-103" value="&lt;b style=&quot;font-size: 18px;&quot;&gt;Repeat until you have a winner (121 points)!&lt;br style=&quot;font-size: 18px;&quot;&gt;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;" vertex="1" parent="1">
           <mxGeometry x="720.36" y="-50" width="429.27" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="gCJ5ofO7X_0yXeeU7I4F" name="Doppelkopf_Infrastructure">
+    <mxGraphModel dx="1050" dy="1676" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="THssHd5Uye00vm0ejtuV-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="THssHd5Uye00vm0ejtuV-1" target="THssHd5Uye00vm0ejtuV-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="THssHd5Uye00vm0ejtuV-1" value="&lt;div&gt;&lt;b&gt;Player&lt;/b&gt;&lt;/div&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="90" y="130" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="THssHd5Uye00vm0ejtuV-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="THssHd5Uye00vm0ejtuV-3" target="THssHd5Uye00vm0ejtuV-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="THssHd5Uye00vm0ejtuV-11" value="GET/game_state/game_id" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="THssHd5Uye00vm0ejtuV-10">
+          <mxGeometry x="0.0746" y="-5" relative="1" as="geometry">
+            <mxPoint x="-5" y="14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="THssHd5Uye00vm0ejtuV-3" value="&lt;b&gt;GraphQL Apollo clients&lt;/b&gt;&lt;br&gt;(React native or Yew)" style="rounded=1;whiteSpace=wrap;html=1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;align=center;" vertex="1" parent="1">
+          <mxGeometry x="214.4" y="-30" width="200" height="380" as="geometry" />
+        </mxCell>
+        <mxCell id="THssHd5Uye00vm0ejtuV-4" value="Mobile client" style="sketch=0;html=1;aspect=fixed;strokeColor=none;shadow=0;fillColor=#3B8DF1;verticalAlign=top;labelPosition=center;verticalLabelPosition=bottom;shape=mxgraph.gcp2.phone_android" vertex="1" parent="1">
+          <mxGeometry x="292" width="44.8" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="THssHd5Uye00vm0ejtuV-6" value="Mobile client" style="html=1;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;shadow=0;dashed=0;strokeWidth=1;shape=mxgraph.ios7.misc.ipad10inch;strokeColor=#c0c0c0;" vertex="1" parent="1">
+          <mxGeometry x="264.4" y="130" width="100" height="63" as="geometry" />
+        </mxCell>
+        <mxCell id="THssHd5Uye00vm0ejtuV-7" value="Browser client" style="pointerEvents=1;shadow=0;dashed=0;html=1;strokeColor=none;fillColor=#4495D1;labelPosition=center;verticalLabelPosition=bottom;verticalAlign=top;align=center;outlineConnect=0;shape=mxgraph.veeam.laptop;" vertex="1" parent="1">
+          <mxGeometry x="282" y="250" width="64.8" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="THssHd5Uye00vm0ejtuV-9" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.api_gateway;fillColor=#D9A741;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="640" y="114" width="76.5" height="93" as="geometry" />
+        </mxCell>
+        <mxCell id="THssHd5Uye00vm0ejtuV-12" value="" style="endArrow=classic;html=1;rounded=0;" edge="1" parent="1" target="THssHd5Uye00vm0ejtuV-9">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="414.4" y="280" as="sourcePoint" />
+            <mxPoint x="464.4" y="230" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="THssHd5Uye00vm0ejtuV-13" value="POST/game_state/game_id" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="1">
+          <mxGeometry x="550.0000000000001" y="260" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
