@@ -1,5 +1,9 @@
 # dopplekopf-cdk
-CDK for Doppelkopf game
+
+CDK for Doppelkopf whole game:
+* Infrasctrucre: [dopplekopf-cdk](https://github.com/Rbatistab/dopplekopf-cdk/tree/main)
+* Frontend application: [dopplekopf-app](https://github.com/Rbatistab/doppelkopf-app)
+* Backend: [dopplekopf-rs](https://github.com/Rbatistab/doppelkopf-rs)
 
 ## Problem
 

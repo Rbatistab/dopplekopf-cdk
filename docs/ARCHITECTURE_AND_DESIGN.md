@@ -28,7 +28,6 @@ References:
 
 # Architecture overview
 
-[ARCH DIAGRAM HERE]
 ![architecture_diagram](https://drive.google.com/uc?export=view&id=1TiFBRmeEne3J1EG_Q1Jk0Z8-5pHftzMI)
 
 For the sake of having a solution that is cost-effective the chose architecture is:
@@ -66,8 +65,8 @@ To receive updates for the BE, there are 2 options:
 ### 2 ApiGateway as GraphQL server and Lambadas as operations
 
 This ApiGatway will act as a GraphQL server to call to the proper operation. Operations will be Rust lambdas that will execute game logic and updata the game state. Operations are:
-1. `POST/get_new_game_id`: Creates a new game and stores it on the database
-1. `POST/join_new_game/game_id`: Takes a `user_id` from the FE and the `game_id` to add the user to the game (after player count validation)
+1. `POST/get_new_game_id`: Creates a new game and stores it on the database. Also will create a new UUID for the player creating the game and return it to the FE. (All UUIDs are Backend-generated).
+1. `POST/join_new_game/game_id`: Takes the `game_id` to add the user to the game (after player count validation)
 1. `POST/deal_cards/game_id`: Takes a `user_id` from the FE and the `game_id` to update the game state to a representation in which that player dealt the cards.
 1. `POST/make_announcement/game_id`: Takes a `user_id` from the FE and the `game_id` to update the game state to a representation of the player announcement
 1. `POST/play_trick/game_id`: Takes a `user_id` from the FE and the `game_id` to evaluate the rules from a representation of the play of the trick. Always will execute the rules against the card. If the move is valid it will update the game state
@@ -77,3 +76,34 @@ This ApiGatway will act as a GraphQL server to call to the proper operation. Ope
 
 S3 update events will trigger an event update lambda that will "push" (I need a better term here) the event through an ApiGateway that serves as Server-Sent-Event server which the FE will be listening.
 Once the FE get's notification it will make a call to `GET/get_game_state`.
+
+# User stories and requiremets
+[TBD]
+## User stories
+[TBD]
+## Functional requirements
+[TBD]
+## Non-fucntional requiremets
+[TBD]
+
+# Questions
+
+* [Questions](https://github.com/Rbatistab/dopplekopf-cdk/blob/main/docs/QUESTIONS.md)
+
+
+### In progress stuff and notes (Don't read, draft content)
+
+If you don’t want to have accounts, whenever people start a game (lobby is a good idea), a lambda generates a UUID and store that locally, that’s their API key
+Anonymous API keys -> UUID identifies the player
+For games a lobby has it’s own UUID, I want to play a game with A, B and C and when a game started, the BE has to sign an ID for the game and the players has the id of the game so -> GameID/UserId
+
+BE is the only one that can be thrusted to generate the UUIDs
+Key -> game UUID and keep like a cache
+Main questions and responsibilities are related to the lobby
+How to tell the players that the game has started, maybe like a poll and then transition to the game state on the FE
+Make a flow chart or list all the things that happen
+Probably you’ll want to have a chat too
+
+I’m gonna need AI to test on development -> maybe who starts the lobby the best way to make things cheap is to force clients instead of the server
+You don’t have to worry about cheating if everything is private, just let the browser do it, offload some work to the browser, even if it’s possible to get the state from the FE to cheat
+
