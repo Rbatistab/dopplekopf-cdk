@@ -1,19 +1,21 @@
 # Overview
 
-[Doppelkopf](https://en.wikipedia.org/wiki/Doppelkopf) is a popular 4-player card game in Germany, but it's a bit complicated, and sadly, it's very hard to find a user friendly game online for non-german speakers that allows you to learn. You can find a few apps and websites that, in my experience, are in german or have a tutorial that is unclear and with room for a lot of questions.
+[Doppelkopf](https://en.wikipedia.org/wiki/Doppelkopf) is a popular 4-player card game in Germany, but it's a complicated and it's hard to find a user friendly game online for non-german speakers that allows you to learn. You can find a few apps and websites. But in my experience, those are either in german only or have a tutorial that is unclear and with room for a lot of questions.
 
 This application intents to develop [Doppelkopf](https://en.wikipedia.org/wiki/Doppelkopf) game to be played on mobile devices or web. The motivation for this project is to peform a rust-based E2E(End-To-End) project as an exercise.
 
+## Goals
+
 1. **Main goal**: Make a game to entertain people.
 1. Keep the cost as low as possible (ideally in the free tier of AWS). 
-1. Try to have flexibility to allow the architecture to scale in case of some weird case of people actually wanting to use the game with an unexpected volume for which further billing solutions need to be developed
+1. Try to have flexibility to allow the architecture to scale for some weird case where people actually wanting to use the game with an unexpected volume for which further billing solutions need to be developed.
 
 ## Game overview
 
-![game_overview](https://drive.google.com/uc?export=view&id=1mwXmJg7Wf5M09esn7J_9TTux8-zYyMJh)
+![game_overview](https://drive.google.com/uc?export=view&id=17qDfg14eofoHQsIuZk-Pci7aqCvqct63)
 
 Doppelkopf is a game in which 4 players. In a normal workflow:
-* Dealer deals 12 cards to each player → Each player plays a trick (optionally make an announcement) → The game rules are applied to determine a winner and to determine the amount of earned points → The winner player and the points are added to the team (determined by rules or verbally) → Repeat until there is a winner.
+* Dealer deals 12 cards to each player → Players agree to a game type (wedding or solo) → Each player, including the dealer, plays a trick (optionally make an announcement) → The game rules are applied to determine a winner and to determine the amount of earned points → The winner takes the cards (which won't be played again) and her team gets the points (determined by rules or verbally) → Repeat all the steps until there is a winner.
 
 References:
 * [Wikipedia](https://en.wikipedia.org/wiki/Doppelkopf)
