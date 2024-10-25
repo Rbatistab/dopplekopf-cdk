@@ -2,7 +2,7 @@
 
 [Doppelkopf](https://en.wikipedia.org/wiki/Doppelkopf) is a popular 4-player card game in Germany, but it's a complicated and it's hard to find a user friendly game online for non-german speakers that allows you to learn. You can find a few apps and websites. But in my experience, those are either in german only or have a tutorial that is unclear and with room for a lot of questions.
 
-This application intents to develop [Doppelkopf](https://en.wikipedia.org/wiki/Doppelkopf) game to be played on mobile devices or web. The motivation for this project is to peform a rust-based E2E(End-To-End) project as an exercise.
+This application intents to develop [Doppelkopf](https://en.wikipedia.org/wiki/Doppelkopf) game to be played on mobile devices or web. The motivation for this project is to peform a **rust-based E2E(End-To-End)** project as an exercise.
 
 ## Goals
 
@@ -23,12 +23,12 @@ References:
 * https://boardgamegeek.com/blogpost/127676/doppelkopf-20-a-brilliant-traditional-trick-taker
 * https://www.deck-of-cards.com/doppelkopf.html
 
-## Requirements
+# Proposal
 
-* The project should use [Rust](https://www.rust-lang.org/) as the main language
-* ....
+## User stories
+[TBD]
 
-# Architecture overview
+## Architecture overview
 
 ![architecture_diagram](https://drive.google.com/uc?export=view&id=1TiFBRmeEne3J1EG_Q1Jk0Z8-5pHftzMI)
 
@@ -79,33 +79,21 @@ This ApiGatway will act as a GraphQL server to call to the proper operation. Ope
 S3 update events will trigger an event update lambda that will "push" (I need a better term here) the event through an ApiGateway that serves as Server-Sent-Event server which the FE will be listening.
 Once the FE get's notification it will make a call to `GET/get_game_state`.
 
-# User stories and requiremets
-[TBD]
-## User stories
-[TBD]
+# Design details
+
+## Requirements
+
 ## Functional requirements
-[TBD]
+* The app should allow a user to create a new game
+* The app should allow a user to join a new game and restric players to only four per game
+* The frontend should communicate with the backend by events
+* ...
+
 ## Non-fucntional requiremets
-[TBD]
+* The project should use [Rust](https://www.rust-lang.org/) as the main language
+* The cost should ideally be on AWS free tier
+*  ...
 
 # Questions
 
 * [Questions](https://github.com/Rbatistab/dopplekopf-cdk/blob/main/docs/QUESTIONS.md)
-
-
-### In progress stuff and notes (Don't read, draft content)
-
-If you don’t want to have accounts, whenever people start a game (lobby is a good idea), a lambda generates a UUID and store that locally, that’s their API key
-Anonymous API keys -> UUID identifies the player
-For games a lobby has it’s own UUID, I want to play a game with A, B and C and when a game started, the BE has to sign an ID for the game and the players has the id of the game so -> GameID/UserId
-
-BE is the only one that can be thrusted to generate the UUIDs
-Key -> game UUID and keep like a cache
-Main questions and responsibilities are related to the lobby
-How to tell the players that the game has started, maybe like a poll and then transition to the game state on the FE
-Make a flow chart or list all the things that happen
-Probably you’ll want to have a chat too
-
-I’m gonna need AI to test on development -> maybe who starts the lobby the best way to make things cheap is to force clients instead of the server
-You don’t have to worry about cheating if everything is private, just let the browser do it, offload some work to the browser, even if it’s possible to get the state from the FE to cheat
-

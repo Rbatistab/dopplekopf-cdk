@@ -22,7 +22,7 @@ Design and develop a card game for web browser and mobile that has at least a ba
 
 # Game Overview
 
-![game_overview](https://drive.google.com/uc?export=view&id=1mwXmJg7Wf5M09esn7J_9TTux8-zYyMJh)
+![game_overview](https://drive.google.com/uc?export=view&id=17qDfg14eofoHQsIuZk-Pci7aqCvqct63)
 
 ## Card deal and contract
 
