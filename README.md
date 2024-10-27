@@ -1,3 +1,23 @@
+# Table of Contents
+<!-- TOC -->
+* [dopplekopf-cdk](#dopplekopf-cdk)
+    * [Problem](#problem)
+    * [Solution](#solution)
+* [Game Overview](#game-overview)
+    * [1. Card deal and contract](#1-card-deal-and-contract)
+    * [2. Contract](#2-contract)
+        * [2.1 Normal game](#21-normal-game)
+        * [2.2 Wedding](#22-wedding)
+        * [2.3 Solo](#23-solo)
+    * [3. Play tricks and bids](#3-play-tricks-and-bids)
+        * [3.1 Play a trick](#31-play-a-trick)
+        * [3.2 Bids](#32-bids)
+    * [4. Evaluate Rules (Scoring)](#4-evaluate-rules-scoring)
+        * [4.1 Trumps](#41-trumps)
+        * [4.2 Special features (extra points)](#42-special-features-extra-points)
+        * [4.3 Scoring](#43-scoring)
+<!-- TOC --># Game Overview
+
 # dopplekopf-cdk
 
 CDK for Doppelkopf whole game:
@@ -20,7 +40,6 @@ Design and develop a card game for web browser and mobile that has at least a ba
 * See [docs/ARCHITECTURE_AND_DESIGN.md](https://github.com/Rbatistab/dopplekopf-cdk/blob/main/docs/ARCHITECTURE_AND_DESIGN.md) for details.
 * See [docs/TODO.md](https://github.com/Rbatistab/dopplekopf-cdk/blob/main/docs/TODO.md) for progress.
 
-# Game Overview
 
 ![game_overview](https://drive.google.com/uc?export=view&id=1fq7aoRl1goi8oo3bYw82Q7YoS-LBFTDm)
 
@@ -152,3 +171,9 @@ Score of each player:
 * Add game value to score of each player of the wininng team
 * Substract game value to score of each player of the losing team
 * If a Solo wins she gets thrice added/substracted (ouch!)
+
+References:
+* [Wikipedia](https://en.wikipedia.org/wiki/Doppelkopf)
+* https://www.pagat.com/schafkopf/doko.html
+* https://boardgamegeek.com/blogpost/127676/doppelkopf-20-a-brilliant-traditional-trick-taker
+* https://www.deck-of-cards.com/doppelkopf.html
