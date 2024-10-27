@@ -12,7 +12,7 @@ This application intents to develop [Doppelkopf](https://en.wikipedia.org/wiki/D
 
 ## Game overview
 
-![game_overview](https://drive.google.com/uc?export=view&id=17qDfg14eofoHQsIuZk-Pci7aqCvqct63)
+![game_overview](https://drive.google.com/uc?export=view&id=1fq7aoRl1goi8oo3bYw82Q7YoS-LBFTDm)
 
 Doppelkopf is a game in which 4 players. In a normal workflow:
 * Dealer deals 12 cards to each player → Players agree to a game type (wedding or solo) → Each player, including the dealer, plays a trick (optionally make an announcement) → The game rules are applied to determine a winner and to determine the amount of earned points → The winner takes the cards (which won't be played again) and her team gets the points (determined by rules or verbally) → Repeat all the steps until there is a winner.
