@@ -1,26 +1,24 @@
 # Todo
 
-## High level stuff
+## Set up
 
-- [ ] Set up an architecture and design document and justify it
-    - [x] Set up a diagram for the high level of the game
-    - [ ] Set up a diagram to model the game interactions
-- [ ] Get review and feedback for design
-    - [x] Velfi ✔
-    - [ ] ...
+- [x] Create a CDK public project
+- [ ] Set up good CI/CD practices for dopplekopf-cdk
 
-## Implementation tasks
+## Architecture
 
-- [x] Dive deep and determine a FE technology (ex. Flutter, React Native, etc) -> Will go for Yew
-- [ ] Determine how to track the state of the game in terms of the actions and the score
+- [ ] [IN_PROGRESS] Set up an architecture and design document and justify it
+    - [ ] [IN_PROGRESS] Set up a diagram for the high level of the game
+    - [ ] Set up a diagram to model the game interactions 
+- [ ] Determine how to track the game state
 - [ ] Define how to store the game
 
-## Iterations
+## Research
 
-- [ ] Prototype: Yew mock up of the game with a simple tutorial - Date: --/--/--
-- [ ] ...
+- [x] Dive deep and determine a FE technology (ex. Flutter, React Native, etc) -> Will go for Yew
 
-## Misc
+## Reviews
 
-- [ ] Set up good CI/CD practices for this package
-
+- [ ] Get final design document reviewed and ask for feedback
+    - [ ] Velfi ✔
+    - [ ] ...
