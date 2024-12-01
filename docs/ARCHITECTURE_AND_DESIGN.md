@@ -37,7 +37,7 @@ For non-german speakers there's user friendly app or online game to learn how to
 
 ## Game overview
 
-![game_overview](https://drive.google.com/uc?export=view&id=1fq7aoRl1goi8oo3bYw82Q7YoS-LBFTDm)
+![game_overview](https://drive.google.com/uc?export=view&id=1Ym_weEHZ5I-QC4gbxL8x4Zu5TIc0yQyI)
 
 Doppelkopf is a game in which 4 players. In a normal workflow:
 * Dealer deals 12 cards to each player → Players agree to a game type (wedding or solo) → Each player, including the dealer, plays a trick (optionally make an announcement) → The game rules are applied to determine a winner and to determine the amount of earned points → The winner takes the cards (which won't be played again) and her team gets the points (determined by rules or verbally) → Repeat all the steps until there is a winner.
