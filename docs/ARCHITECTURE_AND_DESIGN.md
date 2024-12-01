@@ -61,7 +61,7 @@ For a more detailed explanation of the game, check the [README of this project](
 
 ## Architecture overview
 
-![architecture_diagram](https://drive.google.com/uc?export=view&id=1TiFBRmeEne3J1EG_Q1Jk0Z8-5pHftzMI)
+![architecture_diagram](https://drive.google.com/uc?export=view&id=1Ym_weEHZ5I-QC4gbxL8x4Zu5TIc0yQyI)
 
 For the sake of having a solution that is cost-effective the chosen architecture is:
 * EventDriven: The UI of the game reacts to events from other players
@@ -71,21 +71,37 @@ For the sake of having a solution that is cost-effective the chosen architecture
 ## Infrastructure choices:
 
 The componentes for this projects are:
-1. A cross-platform frontend GraphQL Apollo client 
-1. An ApiGateway as GraphQL server and Lambdas as operations
+1. A cross-platform frontend app
+1. A REST ApiGateway
 1. S3 as a game state tracker and S3 events to inform the FE of game state changes
 
-### 1. A cross-platform frontend GraphQL Apollo client 
+### 1. A cross-platform frontend app 
 
 In order to develop a single front end available for mobile app and web browser. The main options here are:
-* **(Selected option)**[Yew](https://yew.rs/) in accordance of the first requirement of this project (to be rust-based). This framework allows to create applications with WebAssembly that may target mobile platforms (additional research is needed to confirm this and find out it's capabilities)
+* [Yew](https://yew.rs/) in accordance of the first requirement of this project (to be rust-based). This framework allows to create applications with WebAssembly that may target mobile platforms (additional research is needed to confirm this and find out it's capabilities)
+    * Most mature and widely-used
+    * JSX-like template syntax
+    * React-like (historically Elm-like struct components, now React-like function components)
+    * More boilerplate for things like event callbacks, need to `.clone()` things into closures, etc.
+    * Relatively good performance (think something like Preact/Vue, faster than React)
+    * Safe Rust
+    * Medium WASM binary sizes
+    * Community-maintained
+* [Leptos](https://leptos.dev/) (also rust-based). Full-stack framework for building web applications in Rust
+    * Relatively new, fast moving
+    * Based on SolidJS/fine-grained reactivity, with no virtual DOM overhead
+    * JSX-like template syntax
+    * Entirely safe Rust
+    * Very, very good performance; outcompetes others listed here not only on rendering speed but on memory usage and on server-rendering speed
+    * Small WASM binary sizes (slightly larger than Sycamore)
+    * Fastest server rendering and strong emphasis on/support for integrations with the server, including multiple server-rendering modes (like both in-order and out-of-order HTML streaming)
 * [React native](https://reactnative.dev/) is primarily focused on mobile but can be easily extended to web applications. Support for this option is widely available and many features could be obtained from libraries instead of creating it from scratch. Also may be the best in terms of how easy it is to develop. The main con is that it leaves all the FE work in Typescript/Javascript instead of Rust.
 
 
 
-### 2 ApiGateway as GraphQL server and Lambadas as operations
+### 2 A REST ApiGateway 
 
-This ApiGatway will act as a GraphQL server to call to the proper operation. Operations will be Rust lambdas that will execute game logic and updata the game state. 
+Regular REST endpoints handled by an API Gateaway that either calls a lambda for processing or to directly proxy a query to the database. Operations will be Rust lambdas that will execute game logic and updata the game state. 
 
 ### 3. S3 as a game state tracker and S3 events to inform the FE of game state changes
 
