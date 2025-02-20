@@ -50,6 +50,8 @@ For a more detailed explanation of the game, check the [README of this project](
 * Any person with access to a mobile device or a computer with a browser who wants to play a game
 
 ## User stories
+
+* As a player, I will be able to get a cheat sheet to help me ramp up and remember game details
 * As a player, I will be able to create a new game
 * As a player, I will be able to join a new game
 * As a player, I will be able to make an contract/auction at the start of a game to agree a game type (wedding, solo, etc)
@@ -57,23 +59,23 @@ For a more detailed explanation of the game, check the [README of this project](
 * As a player, I will be able to play a trick
 * As a player, I will be able to optionally make a bid on my turn of playing a trick
 * As a player, the game won't allow me to do an invalid play
-* As a player, I will be able to see the winner, and the amoun of points of each player after a round
+* As a player, I will be able to see the winner, and the amount of points of each player after a round
 
 ## Architecture overview
 
-![architecture_diagram](https://drive.google.com/uc?export=view&id=1Ym_weEHZ5I-QC4gbxL8x4Zu5TIc0yQyI)
+![architecture_diagram](https://drive.google.com/uc?export=view&id=1PAE1zIBQmXoJgPnjzM6qlRAgD6cWZWQi)
 
 For the sake of having a solution that is cost-effective the chosen architecture is:
-* EventDriven: The UI of the game reacts to events from other players
+* EventDriven: The UI of the game reacts to events from other players to inform the user about updates and allow him to play when it's his turn
 * Serverless: Use ApiGateways + Lambda for game’s logic with API’s from a Rust library and Server-Sent events to update the FE clients
-* Track the game with a database that is consumable both from both from BE (update game state after applying logic) and FE (fetch game state after receiving notifications)
+* Track the game with a database that is consumable from both from BE (update game state after applying logic) and FE (fetch game state after receiving notifications)
 
 ## Infrastructure choices:
 
-The componentes for this projects are:
+The componentes for this project are:
 1. A cross-platform frontend app
 1. A REST ApiGateway
-1. S3 as a game state tracker and S3 events to inform the FE of game state changes
+1. DynamoDB as a game state tracker and DDB streams to inform the FE of game state changes
 
 ### 1. A cross-platform frontend app 
 
@@ -101,11 +103,18 @@ In order to develop a single front end available for mobile app and web browser.
 
 ### 2 A REST ApiGateway 
 
-Regular REST endpoints handled by an API Gateaway that either calls a lambda for processing or to directly proxy a query to the database. Operations will be Rust lambdas that will execute game logic and updata the game state. 
+Regular REST endpoints handled by an API Gateway that either triggers a lambda for processing and updating the game state or query the database. Operations will be Rust lambdas that will execute game logic and update the game state. 
 
-### 3. S3 as a game state tracker and S3 events to inform the FE of game state changes
+### 3. DynamoDB as a game state tracker and DDB streams to inform the FE of game state changes
 
-S3 update events will trigger an event update lambda that will "push" (I need a better term here) the event through an ApiGateway that serves as Server-Sent-Event server which the FE will be listening.
+The game state will be tracked with DDB with the following schema: 
+```json
+{
+  "tbd": "TDB"
+}
+```
+
+After each update, a lambda stream will trigger a `GameStateEventsLambda` that will act as a Server-Sent event through an APIGateway.jj
 
 # Design details
 
@@ -140,31 +149,40 @@ To receive updates for the BE, there are 2 options:
 ## Backend 
 
 [IN PROGRESS]
-BE is pretty straigtforward as it will have an ApiGateway, `<NAME>`, as apollo server for GraphQL 
+BE is pretty straightforward as it will have an ApiGateway, `DoppelKopfApiGateway` that will route to individual operations.
 
 The operations will live in project [doppelkopf-rs](https://github.com/Rbatistab/doppelkopf-rs) which will follow a structure like this:
 ```
 ├── Cargo.lock
 ├── Cargo.toml
-├── operation1/
-├── operation2/
-│   ├── Cargo.toml
-│   └── src
-│       └── main.rs
+├── crates/
+│   ├── other_backend_crates
+|   ...
+│   ├── operation1_lambda/
+|      ├── Cargo.toml
+|      └── src
+│          └── operation1_lambda_handler.rs
+│   ├── operation2_lambda/
+|      ├── Cargo.toml
+|      └── src
+│          └── operation2_lambda_handler.rs
+|   ...
 ...
 └── target
 
 ```
 
 Operations are:
+1. `GET/get_cheat_sheet/sheet_id`: Retrieves a cheat.
 1. `POST/get_new_game_id`: Creates a new game and stores it on the database. Also will create a new UUID for the player creating the game and return it to the FE. (All UUIDs are Backend-generated).
 1. `POST/join_new_game/game_id`: Takes the `game_id` to add the user to the game (after player count validation)
 1. `POST/deal_cards/game_id`: Takes a `user_id` from the FE and the `game_id` to update the game state to a representation in which that player dealt the cards.
 1. `POST/make_announcement/game_id`: Takes a `user_id` from the FE and the `game_id` to update the game state to a representation of the player announcement
 1. `POST/play_trick/game_id`: Takes a `user_id` from the FE and the `game_id` to evaluate the rules from a representation of the play of the trick. Always will execute the rules against the card. If the move is valid it will update the game state
-1. **`GET/get_game_state`**: (Assumption that is possible) This operation has no lambda, the ApiGateway fetches the game state directly from S3.
+1. **`GET/get_game_state`**: (Assumption that is possible) This operation has no lambda, the ApiGateway fetches the game state directly from DDB.
 
 ## Events
+
 Once the FE get's notification it will make a call to `GET/get_game_state`.
 [IN PROGRESS]
 

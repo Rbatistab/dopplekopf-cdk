@@ -17,6 +17,17 @@
 
 - [x] Dive deep and determine a FE technology (ex. Flutter, React Native, etc) -> Will go for Yew
 
+## Hands on
+
+- [ ] Set up the lambdas
+  - [ ] Set up `get_cheat_sheet_lambda`
+  - [ ] Set up `get_new_game_id_lambda`
+  - [ ] Set up `join_new_game_lambda`
+  - [ ] Set up `deal_cards_lambda`
+  - [ ] Set up `make_announcement_lambda`
+  - [ ] Set up `play_trick_lambda`
+  - [ ] Set up `get_game_state_lambda`
+
 ## Reviews
 
 - [ ] Get final design document reviewed and ask for feedback
